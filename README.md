@@ -19,7 +19,7 @@ As a user, I should be able to navigate to the todo list and remove labs I’m n
 - Lab-container section to display results. Results may show whether the lab is completed. May contain filter parameters to search/sort labs by phase, section, topic, search term, etc.
 - Star option to mark labs as labs of interest (e.g. incomplete, intend to review). Starred labs will be added to a "to-do" section (UPDATE)
 - Starred-lab container section to display labs marked as labs of interest
-- Remove lab option user does not wish to complete (destroy)
+- Remove lab option. A user can to remove lab from the data set. (e.g. the user does not intend to complete the lab, or does not find the lab relevant to their analysis) (DESTROY)
 
 ### ActiveRecord: 
 - One to many relationship.
