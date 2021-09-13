@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Git Gud
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Pitch:
 
-## Available Scripts
+In this project, we will collect data on Flatiron Github labs so that a Flatiron student can view their GitHub lab statistics. 
 
-In the project directory, you can run:
+## User Stories:
+As a user, I want to view my Flatiron GitHub lab stats like lab completion time, number of commits, number of forks, etc. 
 
-### `npm start`
+As a user, I should be able to see all labs for a phase and see which ones are incomplete. I should be able to star a lab that is incomplete which will update on the UI and the database to add the lab to a “todo”
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+As a user, I should be able to navigate to the todo list and remove labs I’m not interested in completing
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Wireframe:
+(WIP)
 
-### `npm test`
+### React App: 
+- Search bar for Flatiron students GitHub username (READ). 
+- Lab-container section to display results. Results may show whether the lab is completed. May contain filter parameters to search/sort labs by phase, section, topic, search term, etc.
+- Star option to mark labs as labs of interest (e.g. incomplete, intend to review). Starred labs will be added to a "to-do" section (UPDATE)
+- Starred-lab container section to display labs marked as labs of interest
+- Remove lab option user does not wish to complete (destroy)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### ActiveRecord: 
+- One to many relationship.
+- Models: Student and Lab
+- Student has many labs, Lab belongs to User
+- Lab contains data of interest scraped from github repository of student for that particular lab.
