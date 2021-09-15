@@ -15,7 +15,9 @@ function LabContainer({labs}) {
     }
     
     return (
-        <div>
+        <div className="app-container">
+
+            <h1 className="gitgud-logo">GitGud</h1>
             <form 
                 onSubmit={(e) => {
                     e.preventDefault();
@@ -29,7 +31,7 @@ function LabContainer({labs}) {
                         name="name" 
                         value={searchTerm}
                         onChange={handleChange}
-                        placeholder="Look up your lab stats...?"
+                        placeholder="  Look up your lab stats..."
                         />
                 </label>
             </form>
