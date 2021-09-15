@@ -1,12 +1,10 @@
-
 function Lab({lab}) {
-    
     
     return (
         <div>
-            <p>
-                This lab is {lab.name}. It has {lab.num_commits} commmits. Submitted at {lab.time_of_commit} by {lab.student_id}
-            </p>
+            <p>{lab.name}</p>
+            <p>Number of Commits: {lab.num_commits}</p>
+            <p>Submitted at: {lab.time_of_commit}</p>
         </div>
     )
 
