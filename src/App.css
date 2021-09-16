@@ -2,6 +2,11 @@
   text-align: center;
 } */
 
+.gitgud-logo {
+  margin-top: 5%;
+  margin-left: 20%;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -9,7 +14,6 @@
   align-items: left;
   margin-left: 20%;
   margin-right: 45%;
-  margin-top: 5%;
   margin-bottom: 20%;
 }
 
@@ -25,6 +29,11 @@
   color: black;
   border: 1px solid black;
   border-radius: 8px;
+}
+
+.student-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .lab-info {
