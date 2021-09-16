@@ -42,7 +42,7 @@ function App() {
     }))
   }
 
-  function handleCompleted(lab_id){
+  function updateLab(lab_id){
     console.log(`Lab ID ${lab_id} is clicked`)
     fetch(`${API}/labs/${lab_id}`, {
       method: "PATCH",
@@ -57,10 +57,20 @@ function App() {
       .then(updatedLab => updateCompleted(updatedLab))
   }
 
+  function deleteLab(lab_id) {
+    fetch(`${API}/labs/${lab_id}`, {
+      method: 'DELETE',
+      headers: {
+        Accepts: 'application/json',
+        'Content-type': 'application/json',
+      },
+    }).then(() => setLabs(labs.filter((lab) => lab.id !== lab_id)));
+  }
+
   return (
     <div>
       <Header />      
-      <LabContainer labs={labs} handleCompleted={handleCompleted}/>  
+      <LabContainer labs={labs} handleUpdate={updateLab} handleDelete={deleteLab}/>  
     </div>
   );
 }
