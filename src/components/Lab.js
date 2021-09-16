@@ -1,4 +1,4 @@
-function Lab({lab, handleCompleted}) {
+function Lab({lab, handleUpdate, handleDelete}) {
     
     return (
         <div className="lab-info">
@@ -7,8 +7,8 @@ function Lab({lab, handleCompleted}) {
             <p>Number of Commits: {lab.num_commits}</p>
             <p>Submitted at: {lab.time_of_commit}</p>
             <p>Completed: {lab.completed}</p>
-            <button onClick={() => handleCompleted(lab.id)} className="buttons">Mark as Completed</button>
-            <button className="buttons">Remove lab</button>
+            <button onClick={() => handleUpdate(lab.id)} className="buttons">Mark as Completed</button>
+            <button onClick={() => handleDelete(lab.id)} className="buttons">Remove lab</button>
         </div>
     )
 
