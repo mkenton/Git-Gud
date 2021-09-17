@@ -1,6 +1,7 @@
 function Header(){
     return (
-    <div>
+    <div className="logo-header">
+        <img className="logo" src= "./gitgud_logo.png" alt="logo"/>
         <h1 className="gitgud-logo">GitGud</h1>
     </div>
     )

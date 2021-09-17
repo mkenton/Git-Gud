@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Lab from './Lab'
 
-function LabContainer({labs, handleUpdate, handleDelete}) {
+function LabContainer({labs, students, handleUpdate, handleDelete}) {
 
     const [studentSearch, setStudentSearch] = useState('')
     const [searchStudent, setSearchStudent] = useState('')
@@ -67,6 +67,7 @@ function LabContainer({labs, handleUpdate, handleDelete}) {
             .filter((post) => post.name.startsWith(labSearch))
             .map((lab) => (
             <Lab 
+                students={students}
                 key={lab.id} 
                 lab={lab} 
                 handleUpdate={handleUpdate}
