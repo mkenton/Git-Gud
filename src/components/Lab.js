@@ -5,8 +5,10 @@ function Lab({ lab, handleUpdate, handleDelete }) {
     return (
         <div className="lab-info">
             <p className="lab-name">{lab.name}</p>
-            <p><strong>{lab.student.user_name}</strong> | Number of Commits: {lab.num_commits} | Submitted at: {lab.time_of_commit}</p>
-            <p>Completed: {lab.completed}</p>
+            <p><strong>{lab.student.user_name}</strong></p>
+            <p>Number of Commits: {lab.num_commits}</p>
+            <p>Submitted at: {lab.time_of_commit}</p>
+            <p style={{ 'color': lab.completed==="Yes" ? 'green' : 'red'}}> {lab.completed==="Yes" ? "Completed" : "Incomplete"}</p>
             <button style={{ 'color': lab.tasked ? 'white' : '', 'backgroundColor': lab.tasked ? 'green' : '' }} onClick={() => handleUpdate(lab)} className="buttons">{lab.tasked ? "Tasked!" : "Add to Tasks"}</button>
             <button onClick={() => handleDelete(lab.id)} className="buttons">Remove lab</button>
         </div>
