@@ -3,8 +3,21 @@
 } */
 
 .gitgud-logo {
-  margin-top: 5%;
-  margin-left: 20%;
+  margin-top: 20px;
+  margin-left: 5px;
+  font-size: 35pt;
+}
+
+.logo-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-left: 5%;
+  width: 70px;
+  height: 70px;
 }
 
 .app-container {
@@ -13,7 +26,7 @@
   justify-content: left;
   align-items: left;
   margin-left: 20%;
-  margin-right: 45%;
+  margin-right: 20%;
   margin-bottom: 20%;
 }
 
@@ -22,7 +35,7 @@
   margin-bottom: 40px;
 }
 
-.input-box { 
+.input-box {
   width: 275px;
   height: 30px;
   background-color: white;
@@ -59,4 +72,24 @@
   border-radius: 8px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.fixed-navbar {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 30px;
+  /* z-index: 10; */
+  background-color: rgb(151, 200, 240);
+  text-align: center;
+}
+
+.nav-link {
+  font-size: 25px;
+  text-decoration: none;
+  padding: 5px 30px;
+  color: black;
+}
+
+.active-nav-link {
+  background-color: white;
 }
