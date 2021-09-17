@@ -66,13 +66,13 @@ function App() {
 
   // // use this code for updating "completed"
 
-  // function updateCompleted(updatedLab) {
-  //   console.log(`Updated Lab`, updatedLab)
-  //   setLabs(labs.map((lab) =>
-  //     lab.id !== updatedLab.id ? lab : {
-  //       ...lab, completed: "Yes"
-  //     }))
-  // }
+  function updateCompleted(updatedLab) {
+    console.log(`Updated Lab`, updatedLab)
+    setLabs(labs.map((lab) =>
+      lab.id !== updatedLab.id ? lab : {
+        ...lab, completed: "Yes"
+      }))
+  }
 
 
   // function updateLab(lab_id) {
@@ -110,7 +110,7 @@ function App() {
         </nav>
         <Switch>
           <Route path="/lab-stats">
-            <LabStats labs={labs} handleUpdate={addToTaskList} handleDelete={deleteLab}/>
+            <LabStats labs={labs} handleUpdate={addToTaskList} handleDelete={deleteLab} handleCompleted={updateCompleted}/>
           </Route>
           <Route exact path="/">
             <LabContainer labs={labs} students={students} handleUpdate={addToTaskList} handleDelete={deleteLab} />
