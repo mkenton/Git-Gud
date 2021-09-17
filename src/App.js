@@ -18,50 +18,63 @@ function App() {
   const [students, setStudents] = useState([])
   const [isComplete, setIsComplete] = useState(false)
 
+  
+  useEffect(() => {
+    fetch(`${API}/students`)
+    .then(r => r.json())
+    .then(data => {
+      // console.log(data)
+      setStudents(data)
+    }
+    )
+  }, [])
+  
   useEffect(() => {
     fetch(`${API}/labs`)
       .then(r => r.json())
       .then(data => {
-        console.log(data)
+        // console.log(data)
         setLabs(data)
       }
       )
   }, [])
-
-  useEffect(() => {
-    fetch(`${API}/students`)
-      .then(r => r.json())
-      .then(data => {
-        console.log(data)
-        setStudents(data)
-      }
-      )
-  }, [])
-
-  function updateCompleted(updatedLab) {
-    console.log(`Updated Lab`, updatedLab)
+  
+  function updateTasked(updatedLab) {
+    // console.log(`Updated Lab`, updatedLab)
     setLabs(labs.map((lab) =>
       lab.id !== updatedLab.id ? lab : {
-        ...lab, completed: "Yes"
+        ...lab, tasked: !lab.tasked
       }))
   }
 
   //TODO: refactor for add to task list
-  function updateLab(lab_id) {
-    console.log(`Lab ID ${lab_id} is clicked`)
-    fetch(`${API}/labs/${lab_id}`, {
+  function addToTaskList(lab) {
+    // console.log("LAB:", lab)
+    console.log(`Lab ID ${lab.id} is clicked`)
+    fetch(`${API}/labs/${lab.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        completed: "Yes"
+        tasked: !lab.tasked
       })
     })
       .then((r) => r.json())
-      .then(updatedLab => updateCompleted(updatedLab))
+      .then(updatedLab => updateTasked(updatedLab))
   }
+
   // // use this code for updating "completed"
+
+  // function updateCompleted(updatedLab) {
+  //   console.log(`Updated Lab`, updatedLab)
+  //   setLabs(labs.map((lab) =>
+  //     lab.id !== updatedLab.id ? lab : {
+  //       ...lab, completed: "Yes"
+  //     }))
+  // }
+
+
   // function updateLab(lab_id) {
   //   console.log(`Lab ID ${lab_id} is clicked`)
   //   fetch(`${API}/labs/${lab_id}`, {
@@ -92,15 +105,15 @@ function App() {
       <div>
         <Header />
         <nav className="fixed-navbar">
-          <NavLink activeClassName="active-nav-link" className="nav-link" exact to="/">Home</NavLink>
+          <NavLink activeClassName="active-nav-link" className="nav-link" exact to="/">Lab Stats</NavLink>
           <NavLink activeClassName="active-nav-link" className="nav-link" to="/lab-stats">Lab Tasks</NavLink>
         </nav>
         <Switch>
           <Route path="/lab-stats">
-            <LabStats labs={labs}/>
+            <LabStats labs={labs} handleUpdate={addToTaskList} handleDelete={deleteLab}/>
           </Route>
           <Route exact path="/">
-            <LabContainer labs={labs} handleUpdate={updateLab} handleDelete={deleteLab} />
+            <LabContainer labs={labs} students={students} handleUpdate={addToTaskList} handleDelete={deleteLab} />
           </Route>
 
         </Switch>
