@@ -1,7 +1,7 @@
 import Task from './Task'
 
 
-function LabStats({ labs, handleUpdate, handleDelete }) {
+function LabStats({ labs, handleUpdate, handleDelete, handleCompleted }) {
 
     const filteredLabs = labs.filter(lab => lab.tasked)
 
@@ -13,6 +13,7 @@ function LabStats({ labs, handleUpdate, handleDelete }) {
                 lab={lab} 
                 handleUpdate={handleUpdate}
                 handleDelete={handleDelete}
+                handleCompleted={handleCompleted}
                 />
             ))}
         </div>

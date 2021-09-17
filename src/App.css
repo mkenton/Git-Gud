@@ -93,3 +93,8 @@
 .active-nav-link {
   background-color: white;
 }
+
+p {
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
