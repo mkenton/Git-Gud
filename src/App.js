@@ -113,7 +113,7 @@ function App() {
             <LabStats labs={labs} handleUpdate={addToTaskList} handleDelete={deleteLab} handleCompleted={updateCompleted}/>
           </Route>
           <Route exact path="/">
-            <LabContainer labs={labs} students={students} handleUpdate={addToTaskList} handleDelete={deleteLab} />
+            <LabContainer labs={labs} handleUpdate={addToTaskList} handleDelete={deleteLab} />
           </Route>
 
         </Switch>
