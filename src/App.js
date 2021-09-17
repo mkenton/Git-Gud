@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from './components/Header';
 import LabContainer from './components/LabContainer'
 import LabStats from './components/LabStats'
-import StudentContainer from './components/StudentContainer'
+// import StudentContainer from './components/StudentContainer'
 import './App.css';
 import {
   BrowserRouter as Router,
