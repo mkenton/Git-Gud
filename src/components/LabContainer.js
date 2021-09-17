@@ -67,7 +67,7 @@ function LabContainer({labs, handleUpdate, handleDelete}) {
             
             {labs
             .filter((post) => post.student.user_name.startsWith(studentSearch))
-            .filter((post) => post.name.startsWith(labSearch))
+            .filter((post) => post.name.includes(labSearch))
             .map((lab) => (
             <Lab 
                 key={lab.id} 
